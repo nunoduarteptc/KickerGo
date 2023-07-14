@@ -41,8 +41,6 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
 	reader(ws)
 }
 
-
-
 func Init() {
 	http.HandleFunc("/ws", wsEndpoint)
 
