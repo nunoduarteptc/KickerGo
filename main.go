@@ -13,7 +13,6 @@ type Result struct {
 	Message string `json:"message"`
 }
 
-var messageChannel chan string
 
 func postMessage(w http.ResponseWriter, r *http.Request) {
 	var result Result
@@ -29,7 +28,6 @@ func postMessage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/json")
 	w.Write(out)
 }
-
 
 func home(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("index.html")
